@@ -525,13 +525,15 @@ std::vector<std::vector<int>> Taxi::CaminoMinimo4(bool distancia, bool benchmark
     float h = INFINITY;
     std::vector<int> nodoSiguiente(2);
     for (int i = 0; i < abierta.size(); i++) {
-      /*if (matrizNodos[abierta[i][0]][abierta[i][1]].get_h() < h) {
+      if ((matrizNodos[abierta[i][0]][abierta[i][1]].get_h() + matrizNodos[abierta[i][0]][abierta[i][1]].get_g()) < f) {
+        f = (matrizNodos[abierta[i][0]][abierta[i][1]].get_h() + matrizNodos[abierta[i][0]][abierta[i][1]].get_g());
         h = matrizNodos[abierta[i][0]][abierta[i][1]].get_h();
         nodoSiguiente[0] = abierta[i][0];
         nodoSiguiente[1] = abierta[i][1];
-      }*/
-      if ((matrizNodos[abierta[i][0]][abierta[i][1]].get_h() + matrizNodos[abierta[i][0]][abierta[i][1]].get_g()) < f) {
-        f = (matrizNodos[abierta[i][0]][abierta[i][1]].get_h() + matrizNodos[abierta[i][0]][abierta[i][1]].get_g());
+      }
+      if ((matrizNodos[abierta[i][0]][abierta[i][1]].get_h() + matrizNodos[abierta[i][0]][abierta[i][1]].get_g() + 1) == f && matrizNodos[abierta[i][0]][abierta[i][1]].get_h() < h) {
+        f = (matrizNodos[abierta[i][0]][abierta[i][1]].get_h() + matrizNodos[abierta[i][0]][abierta[i][1]].get_g() + 1);
+        h = matrizNodos[abierta[i][0]][abierta[i][1]].get_h();
         nodoSiguiente[0] = abierta[i][0];
         nodoSiguiente[1] = abierta[i][1];
       }
@@ -603,13 +605,15 @@ std::vector<std::vector<int>> Taxi::CaminoMinimo8(bool distancia, bool benchmark
     float h = INFINITY;
     std::vector<int> nodoSiguiente(2);
     for (int i = 0; i < abierta.size(); i++) {
-      /*if (matrizNodos[abierta[i][0]][abierta[i][1]].get_h() < h) {
+      if ((matrizNodos[abierta[i][0]][abierta[i][1]].get_h() + matrizNodos[abierta[i][0]][abierta[i][1]].get_g()) < f) {
+        f = (matrizNodos[abierta[i][0]][abierta[i][1]].get_h() + matrizNodos[abierta[i][0]][abierta[i][1]].get_g());
         h = matrizNodos[abierta[i][0]][abierta[i][1]].get_h();
         nodoSiguiente[0] = abierta[i][0];
         nodoSiguiente[1] = abierta[i][1];
-      }*/
-      if ((matrizNodos[abierta[i][0]][abierta[i][1]].get_h() + matrizNodos[abierta[i][0]][abierta[i][1]].get_g()) < f) {
-        f = (matrizNodos[abierta[i][0]][abierta[i][1]].get_h() + matrizNodos[abierta[i][0]][abierta[i][1]].get_g());
+      }
+      if ((matrizNodos[abierta[i][0]][abierta[i][1]].get_h() + matrizNodos[abierta[i][0]][abierta[i][1]].get_g() + 1) == f && matrizNodos[abierta[i][0]][abierta[i][1]].get_h() < h) {
+        f = (matrizNodos[abierta[i][0]][abierta[i][1]].get_h() + matrizNodos[abierta[i][0]][abierta[i][1]].get_g() + 1);
+        h = matrizNodos[abierta[i][0]][abierta[i][1]].get_h();
         nodoSiguiente[0] = abierta[i][0];
         nodoSiguiente[1] = abierta[i][1];
       }
@@ -704,13 +708,15 @@ std::vector<std::vector<int>> Taxi::CaminoMinimo4Traza(bool distancia) {
     float h = INFINITY;
     std::vector<int> nodoSiguiente(2);
     for (int i = 0; i < abierta.size(); i++) {
-      /*if (matrizNodos[abierta[i][0]][abierta[i][1]].get_h() < h) {
+      if ((matrizNodos[abierta[i][0]][abierta[i][1]].get_h() + matrizNodos[abierta[i][0]][abierta[i][1]].get_g() + 1) < f) {
+        f = (matrizNodos[abierta[i][0]][abierta[i][1]].get_h() + matrizNodos[abierta[i][0]][abierta[i][1]].get_g() + 1);
         h = matrizNodos[abierta[i][0]][abierta[i][1]].get_h();
         nodoSiguiente[0] = abierta[i][0];
         nodoSiguiente[1] = abierta[i][1];
-      }*/
-      if ((matrizNodos[abierta[i][0]][abierta[i][1]].get_h() + matrizNodos[abierta[i][0]][abierta[i][1]].get_g() + 1) < f) {
+      }
+      if ((matrizNodos[abierta[i][0]][abierta[i][1]].get_h() + matrizNodos[abierta[i][0]][abierta[i][1]].get_g() + 1) == f && matrizNodos[abierta[i][0]][abierta[i][1]].get_h() < h) {
         f = (matrizNodos[abierta[i][0]][abierta[i][1]].get_h() + matrizNodos[abierta[i][0]][abierta[i][1]].get_g() + 1);
+        h = matrizNodos[abierta[i][0]][abierta[i][1]].get_h();
         nodoSiguiente[0] = abierta[i][0];
         nodoSiguiente[1] = abierta[i][1];
       }
@@ -795,13 +801,15 @@ std::vector<std::vector<int>> Taxi::CaminoMinimo8Traza(bool distancia) {
     float h = INFINITY;
     std::vector<int> nodoSiguiente(2);
     for (int i = 0; i < abierta.size(); i++) {
-      /*if (matrizNodos[abierta[i][0]][abierta[i][1]].get_h() < h) {
+      if ((matrizNodos[abierta[i][0]][abierta[i][1]].get_h() + matrizNodos[abierta[i][0]][abierta[i][1]].get_g() + 1) < f) {
+        f = (matrizNodos[abierta[i][0]][abierta[i][1]].get_h() + matrizNodos[abierta[i][0]][abierta[i][1]].get_g() + 1);
         h = matrizNodos[abierta[i][0]][abierta[i][1]].get_h();
         nodoSiguiente[0] = abierta[i][0];
         nodoSiguiente[1] = abierta[i][1];
-      }*/
-      if ((matrizNodos[abierta[i][0]][abierta[i][1]].get_h() + matrizNodos[abierta[i][0]][abierta[i][1]].get_g() + 1) < f) {
+      }
+      if ((matrizNodos[abierta[i][0]][abierta[i][1]].get_h() + matrizNodos[abierta[i][0]][abierta[i][1]].get_g() + 1) == f && matrizNodos[abierta[i][0]][abierta[i][1]].get_h() < h) {
         f = (matrizNodos[abierta[i][0]][abierta[i][1]].get_h() + matrizNodos[abierta[i][0]][abierta[i][1]].get_g() + 1);
+        h = matrizNodos[abierta[i][0]][abierta[i][1]].get_h();
         nodoSiguiente[0] = abierta[i][0];
         nodoSiguiente[1] = abierta[i][1];
       }
@@ -845,11 +853,11 @@ std::vector<std::vector<int>> Taxi::CaminoMinimo8Traza(bool distancia) {
 float Taxi::Heuristica(bool distancia, int coordx, int coordy) {
 
   if (distancia == 0) {
-    float manhattan = ((abs(coordx - destinoX)) + (abs(coordy - destinoY)) * 1.1);
+    float manhattan = ((abs(coordx - destinoX)) + (abs(coordy - destinoY)));
     return manhattan;
   }
   else {
-    float euclidea = (sqrt(pow((coordx - destinoX), 2) + pow((coordy - destinoY), 2)) * 1.5);
+    float euclidea = (sqrt(pow((coordx - destinoX), 2) + pow((coordy - destinoY), 2)));
     return euclidea;
   }
 }
