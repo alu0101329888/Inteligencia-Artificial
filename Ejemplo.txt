@@ -1,41 +1,9 @@
-
-    for (int i = 0; i < abierta.size(); i++) {
-      if (abierta[i][0] == nodoSiguiente[0] && abierta[i][1] == nodoSiguiente[1]) {
-        abierta.erase(abierta.begin() + i);
-      }
-    }
-    cerrada.push_back(nodoSiguiente);
-    nodoActual = nodoSiguiente;
-
-    VecinoArriba(nodoActual, cerrada, abierta, matrizNodos, distancia);
-    VecinoDer(nodoActual, cerrada, abierta, matrizNodos, distancia);
-    VecinoAbajo(nodoActual, cerrada, abierta, matrizNodos, distancia);
-    VecinoIzq(nodoActual, cerrada, abierta, matrizNodos, distancia);
-    
-
-    while ((nodoActual[0] != destinoX || nodoActual[1] != destinoY) && !abierta.empty() && window.isOpen()) {
-    float f = INFINITY;
-    std::vector<int> nodoSiguiente(2);
-    for (int i = 0; i < abierta.size(); i++) {
-      if ((matrizNodos[abierta[i][0]][abierta[i][1]].get_h() + matrizNodos[abierta[i][0]][abierta[i][1]].get_g() + 1) < f) {
-        f = (matrizNodos[abierta[i][0]][abierta[i][1]].get_h() + matrizNodos[abierta[i][0]][abierta[i][1]].get_g() + 1);
-        nodoSiguiente[0] = abierta[i][0];
-        nodoSiguiente[1] = abierta[i][1];
-      }
-    }
-    for (int i = 0; i < abierta.size(); i++) {
-      if (abierta[i][0] == nodoSiguiente[0] && abierta[i][1] == nodoSiguiente[1]) {
-        abierta.erase(abierta.begin() + i);
-      }
-    }
-    cerrada.push_back(nodoSiguiente);
-    nodoActual = nodoSiguiente;
-
-    VecinoArriba(nodoActual, cerrada, abierta, matrizNodos, distancia);
-    VecinoDer(nodoActual, cerrada, abierta, matrizNodos, distancia);
-    VecinoAbajo(nodoActual, cerrada, abierta, matrizNodos, distancia);
-    VecinoIzq(nodoActual, cerrada, abierta, matrizNodos, distancia);
-    VecinoArribaDer(nodoActual, cerrada, abierta, matrizNodos, distancia);
-    VecinoArribaIzq(nodoActual, cerrada, abierta, matrizNodos, distancia);
-    VecinoAbajoDer(nodoActual, cerrada, abierta, matrizNodos, distancia);
-    VecinoAbajoIzq(nodoActual, cerrada, abierta, matrizNodos, distancia);
+0000000000000000000000
+1111111111111111111110
+0000000000000000000000
+0111111111111111111111
+0000000000000000000000
+1111111111111111111110
+0000000000000000000000
+0111111111111111111111
+0000000000000000000000
